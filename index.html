@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    search it
+    search
+
     <script>
       (function() {
         var cx = '000230565528626047455:btimziuakhy';
@@ -18,5 +19,39 @@
       })();
     </script>
     <gcse:search></gcse:search>
+  </body>
+</html> -->
+
+
+<html>
+  <head>
+    <title>JSON/Atom Custom Search API Example</title>
+  </head>
+  <body>
+    <div id="content"></div>
+    <script>
+      function hndlr(response) {
+      for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.htmlTitle should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.htmlTitle;
+      }
+    }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?key=<span class="apiparam">AIzaSyBSIrBoMYVeYJmKMV2TnuSgJSjVmqC02C0</span>&amp;cx=000230565528626047455:btimziuakhy&amp;q=cars&amp;callback=hndlr">
+    </script>
+
+    <!-- <script>
+      (function() {
+        var cx = '000230565528626047455:btimziuakhy';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    <gcse:search></gcse:search> -->
   </body>
 </html>
